@@ -3,136 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenClaw - Meu Agente Pessoal</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230066cc'/%3E%3Ccircle cx='50' cy='50' r='20' fill='%23ffffff'/%3E%3C/svg%3E">
+    <title>OpenClaw - Backup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a1628;
+            color: #fff;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #0088ff;
+            margin-bottom: 8px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #94a3b8;
+            font-weight: normal;
+        }
+        
+        /* Card principal */
+        .card {
+            background: #111d2e;
+            border: 1px solid #1e3a5f;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .card-title {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-text {
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+        
+        /* Área do código */
+        .code-header {
+            background: #0f0f1a;
+            border: 1px solid #333;
+            border-radius: 8px 8px 0 0;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .code-title {
+            color: #ffc107;
+            font-size: 14px;
+        }
+        .copy-btn {
+            background: #0066cc;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .copy-btn:hover {
+            background: #0088ff;
+        }
+        .copy-btn.copied {
+            background: #10b981;
+        }
+        pre {
+            background: #000;
+            border: 1px solid #333;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 16px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        code {
+            color: #10b981;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        /* Instruções */
+        .instructions {
+            background: #0f0f1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+        .instructions h3 {
+            color: #ffc107;
+            margin-bottom: 16px;
+        }
+        .instructions ol {
+            color: #94a3b8;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 12px;
+        }
+        .instructions code {
+            background: #1a1a2e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #10b981;
+        }
+        
+        /* Links */
+        .links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .links a {
+            color: #0088ff;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <div class="avatar-icon">🦞</div>
-                <h1>OpenClaw</h1>
-            </div>
-            <nav class="nav">
-                <a href="#chat" class="nav-link active">Chat</a>
-                <a href="#sobre" class="nav-link">Sobre</a>
-                <a href="#backup" class="nav-link">Backup</a><a href="#backup" class="nav-link">🛡️Backup</a> <a href="#github" class="nav-link">GitHub</a>
-            </nav>
+        <header>
+            <div class="logo">🦞</div>
+            <h1>OpenClaw Backup</h1>
+            <h2>Sistema de recuperação do agente</h2>
         </header>
-
-        <!-- Main Content -->
-        <main class="main">
-            <!-- Welcome Section -->
-            <section class="welcome">
-                <div class="welcome-content">
-                    <img src="https://github.com/thalesbxbot-design/meu-agente1/blob/main/avatar_openclaw.png?raw=true" alt="Avatar OpenClaw" class="welcome-avatar">
-                    <div class="welcome-text">
-                        <h2>Olá! Sou seu agente pessoal 🤖</h2>
-                        <p>Estou aqui para ajudar com tarefas, responder perguntas, gerar imagens, buscar informações e muito mais.</p>
-                        <div class="welcome-badges">
-                            <span class="badge">🦞 OpenClaw</span>
-                            <span class="badge">🧠 IA Avançada</span>
-                            <span class="badge">🔄 Sempre Online</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Quick Actions -->
-            <section class="quick-actions">
-                <h3>O que posso fazer?</h3>
-                <div class="actions-grid">
-                    <div class="action-card" onclick="fillChat('Gere uma imagem de ')">
-                        <div class="action-icon">🎨</div>
-                        <h4>Gerar Imagens</h4>
-                        <p>Crie imagens únicas com descrições detalhadas</p>
-                    </div>
-                    <div class="action-card" onclick="fillChat('Busque informações sobre ')">
-                        <div class="action-icon">🔍</div>
-                        <h4>Buscar na Web</h4>
-                        <p>Encontre informações atualizadas</p>
-                    </div>
-                    <div class="action-card" onclick="fillChat('Me ajude a organizar ')">
-                        <div class="action-icon">📝</div>
-                        <h4>Organizar</h4>
-                        <p>Arquivos, ideias e tarefas</p>
-                    </div>
-                    <div class="action-card" onclick="fillChat('Crie um código para ')">
-                        <div class="action-icon">💻</div>
-                        <h4>Programar</h4>
-                        <p>Scripts, sites e automações</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Chat Section -->
-            <section id="chat" class="chat-section">
-                <div class="chat-container">
-                    <div class="chat-header">
-                        <div class="chat-status">
-                            <span class="status-dot online"></span>
-                            <span>Online</span>
-                        </div>
-                    </div>
-                    <div class="chat-messages" id="chat-messages">
-                        <div class="message agent">
-                            <div class="message-avatar">🦞</div>
-                            <div class="message-content">
-                                <p>Olá! 👋 Sou seu agente pessoal. Como posso ajudar você hoje?</p>
-                                <span class="message-time">Agora</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat-input-container">
-                        <form id="chat-form" class="chat-form">
-                            <input type="text" id="chat-input" placeholder="Digite sua mensagem..." autocomplete="off">
-                            <button type="submit" class="send-btn">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="sobre" class="about-section">
-                <h3>Sobre o OpenClaw</h3>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h4>🦞 Quem sou?</h4>
-                        <p>Sou um agente IA desenvolvido para ser seu assistente pessoal. Posso ajudar com tarefas, responder perguntas, gerar conteúdo e muito mais.</p>
-                    </div>
-                    <div class="about-card">
-                        <h4>🔒 Segurança</h4>
-                        <p>Seus dados são importantes. Tenho backups automáticos no GitHub e sistemas de recuperação para garantir continuidade.</p>
-                    </div>
-                    <div class="about-card">
-                        <h4>🚀 Capacidades</h4>
-                        <ul>
-                            <li>✅ Busca na web em tempo real</li>
-                            <li>✅ Geração de imagens</li>
-                            <li>✅ Execução de código Python/Bash</li>
-                            <li>✅ Integração com Telegram</li>
-                            <li>✅ Controle de navegador</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- GitHub Section -->
-            <section id="github" class="github-section">
-                <h3>🔗 Recursos no GitHub</h3>
-                <p>Todos os backups e configurações estão salvos no repositório:</p>
-                <a href="https://github.com/thalesbxbot-design/meu-agente1" target="_blank" class="github-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    Ver Repositório no GitHub
-                </a>
-            </section>
+        
+        <div class="card">
+            <div class="card-title">⚠️ Configuração de Segurança</div>
+            <p class="card-text">
+                Se o agente parar de funcionar, copie o código abaixo, salve como <code>config.json</code> e aplique no terminal.
+            </p>
+            
+            <div class="code-header">
+                <span class="code-title">config-backup.json</span>
+                <button class="copy-btn" onclick="copyCode()">📋 Copiar</button>
+            </div>
+            <pre><code id="config-code">Carregando...</code></pre>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Como Recuperar:</h3>
+            <ol>
+                <li>Copie todo o código acima</li>
+                <li>Crie um arquivo no computador chamado <code>config.json</code></li>
+                <li>Cole o código e salve</li>
+                <li>No terminal da Hostinger, envie o arquivo:<br>
+                    <code>scp config.json root@seu-ip:/tmp/</code></li>
+                <li>Aplique a configuração:<br>
+                    <code>docker exec openclaw-argf-openclaw-1 openclaw gateway config.apply --file /tmp/config.json</code></li>
+            </ol>
+        </div>
+        
+        <div class="links">
+            <a href="https://github.com/thalesbxbot-design/meu-agente1" target="_blank">📁 Repositório</a>
+            <a href="https://t.me/agentedothales_bot" target="_blank">💬 Telegram</a>
+        </div>
+        
+        <footer>
+            🦞 OpenClaw - Backup Seguro
+        </footer>
+    </div>
+    
+    <script>
+        // Carrega o JSON embutido
+        const configJSON = {
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "nvidia-nim": {
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "${MOONSHOT_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "moonshotai/kimi-k2.5",
+            "name": "Kimi K2.5 (NVIDIA)",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "nvidia-nim/moonshotai/kimi-k2.5" },
+      "models": { "nvidia-nim/moonshotai/kimi-k2.5": { "alias": "kimi" } },
+      "maxConcurrent": 4,
+      "subagents": { "maxConcurrent": 8 }
+    },
+    "list": [{ "id": "main", "name": "main" }]
+  },
+  "commands": { "native": "auto", "nativeSkills": "auto" },
+  "gateway": {
+    "mode": "local",
+    "controlUi": { "allowInsecureAuth": true },
+    "auth": { "mode": "token", "token": "${GATEWAY_AUTH_TOKEN}" },
+    "remote": { "token": "${GATEWAY_REMOTE_TOKEN}" }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": { "enabled": true, "config": {} }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "dmPolicy": "open",
+      "allowFrom": ["*"]
+    }
+  }
+};
+        
+        document.getElementById('config-code').textContent = JSON.stringify(configJSON, null, 2);
+        
+        function copyCode() {
+            const code = JSON.stringify(configJSON, null, 2);
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✅ Copiado!';
+                btn.classList.add('copied');
