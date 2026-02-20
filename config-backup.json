@@ -1,0 +1,51 @@
+{
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "nvidia-nim": {
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "${MOONSHOT_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "moonshotai/kimi-k2.5",
+            "name": "Kimi K2.5 (NVIDIA)",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "nvidia-nim/moonshotai/kimi-k2.5" },
+      "models": { "nvidia-nim/moonshotai/kimi-k2.5": { "alias": "kimi" } },
+      "maxConcurrent": 4,
+      "subagents": { "maxConcurrent": 8 }
+    },
+    "list": [{ "id": "main", "name": "main" }]
+  },
+  "commands": { "native": "auto", "nativeSkills": "auto" },
+  "gateway": {
+    "mode": "local",
+    "controlUi": { "allowInsecureAuth": true },
+    "auth": { "mode": "token", "token": "${GATEWAY_AUTH_TOKEN}" },
+    "remote": { "token": "${GATEWAY_REMOTE_TOKEN}" }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": { "enabled": true, "config": {} }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "dmPolicy": "open",
+      "allowFrom": ["*"]
+    }
+  }
+}
