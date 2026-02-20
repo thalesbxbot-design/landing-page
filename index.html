@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw - Meu Agente Pessoal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230066cc'/%3E%3Ccircle cx='50' cy='50' r='20' fill='%23ffffff'/%3E%3C/svg%3E">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="avatar-icon">🦞</div>
+                <h1>OpenClaw</h1>
+            </div>
+            <nav class="nav">
+                <a href="#chat" class="nav-link active">Chat</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#github" class="nav-link">GitHub</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Welcome Section -->
+            <section class="welcome">
+                <div class="welcome-content">
+                    <img src="https://github.com/thalesbxbot-design/meu-agente1/blob/main/avatar_openclaw.png?raw=true" alt="Avatar OpenClaw" class="welcome-avatar">
+                    <div class="welcome-text">
+                        <h2>Olá! Sou seu agente pessoal 🤖</h2>
+                        <p>Estou aqui para ajudar com tarefas, responder perguntas, gerar imagens, buscar informações e muito mais.</p>
+                        <div class="welcome-badges">
+                            <span class="badge">🦞 OpenClaw</span>
+                            <span class="badge">🧠 IA Avançada</span>
+                            <span class="badge">🔄 Sempre Online</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h3>O que posso fazer?</h3>
+                <div class="actions-grid">
+                    <div class="action-card" onclick="fillChat('Gere uma imagem de ')">
+                        <div class="action-icon">🎨</div>
+                        <h4>Gerar Imagens</h4>
+                        <p>Crie imagens únicas com descrições detalhadas</p>
+                    </div>
+                    <div class="action-card" onclick="fillChat('Busque informações sobre ')">
+                        <div class="action-icon">🔍</div>
+                        <h4>Buscar na Web</h4>
+                        <p>Encontre informações atualizadas</p>
+                    </div>
+                    <div class="action-card" onclick="fillChat('Me ajude a organizar ')">
+                        <div class="action-icon">📝</div>
+                        <h4>Organizar</h4>
+                        <p>Arquivos, ideias e tarefas</p>
+                    </div>
+                    <div class="action-card" onclick="fillChat('Crie um código para ')">
+                        <div class="action-icon">💻</div>
+                        <h4>Programar</h4>
+                        <p>Scripts, sites e automações</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chat Section -->
+            <section id="chat" class="chat-section">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="chat-status">
+                            <span class="status-dot online"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message agent">
+                            <div class="message-avatar">🦞</div>
+                            <div class="message-content">
+                                <p>Olá! 👋 Sou seu agente pessoal. Como posso ajudar você hoje?</p>
+                                <span class="message-time">Agora</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <form id="chat-form" class="chat-form">
+                            <input type="text" id="chat-input" placeholder="Digite sua mensagem..." autocomplete="off">
+                            <button type="submit" class="send-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="sobre" class="about-section">
+                <h3>Sobre o OpenClaw</h3>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h4>🦞 Quem sou?</h4>
+                        <p>Sou um agente IA desenvolvido para ser seu assistente pessoal. Posso ajudar com tarefas, responder perguntas, gerar conteúdo e muito mais.</p>
+                    </div>
+                    <div class="about-card">
+                        <h4>🔒 Segurança</h4>
+                        <p>Seus dados são importantes. Tenho backups automáticos no GitHub e sistemas de recuperação para garantir continuidade.</p>
+                    </div>
+                    <div class="about-card">
+                        <h4>🚀 Capacidades</h4>
+                        <ul>
+                            <li>✅ Busca na web em tempo real</li>
+                            <li>✅ Geração de imagens</li>
+                            <li>✅ Execução de código Python/Bash</li>
+                            <li>✅ Integração com Telegram</li>
+                            <li>✅ Controle de navegador</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub Section -->
+            <section id="github" class="github-section">
+                <h3>🔗 Recursos no GitHub</h3>
+                <p>Todos os backups e configurações estão salvos no repositório:</p>
+                <a href="https://github.com/thalesbxbot-design/meu-agente1" target="_blank" class="github-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Ver Repositório no GitHub
+                </a>
+            </section>
